@@ -6,17 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.easynotes.model.EntityNote;
-import com.easynotes.repository.NoteDAO;
+import com.easynotes.repo.NoteRepo;
 
 @Service
 public class NoteService
 {
 	@Autowired
-	private NoteDAO noteRepo;
+	private NoteRepo noteRepo;
 
 	public EntityNote saveNote(EntityNote note)
 	{
-		return noteRepo.save(note);
+		noteRepo.save(note);
+		return note;
 	}
 
 	public List<EntityNote> showAll()
@@ -28,4 +29,5 @@ public class NoteService
 	{
 		noteRepo.delete(id);
 	}
+
 }
