@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.easynotes.model.EntityNote;
+import com.easynotes.dto.NoteInDto;
+import com.easynotes.dto.NoteOutDto;
 import com.easynotes.service.NoteService;
 
 @RestController
@@ -22,13 +23,13 @@ public class NotesController
 	private NoteService noteService;
 
 	@PostMapping
-	public EntityNote save(@RequestBody EntityNote note)
+	public NoteOutDto save(@RequestBody NoteInDto noteInDto)
 	{
-		return noteService.saveNote(note);
+		return noteService.saveNote(noteInDto);
 	}
 
 	@GetMapping
-	public List<EntityNote> showAll()
+	public List<NoteOutDto> showAll()
 	{
 		return noteService.showAll();
 	}
