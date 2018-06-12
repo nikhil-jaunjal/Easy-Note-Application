@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.easynotes.dto.NoteInDto;
 import com.easynotes.dto.NoteOutDto;
 import com.easynotes.service.NoteService;
-
 @RestController
 @RequestMapping("/notes")
 public class NotesController
@@ -25,13 +24,19 @@ public class NotesController
 	@PostMapping
 	public NoteOutDto save(@RequestBody NoteInDto noteInDto)
 	{
-		return noteService.saveNote(noteInDto);
+		return noteService.createNote(noteInDto);
 	}
 
 	@GetMapping
 	public List<NoteOutDto> showAll()
 	{
-		return noteService.showAll();
+		return noteService.findAll();
+	}
+
+	@GetMapping("/title")
+	public NoteOutDto getNote(@RequestParam("title") String title)
+	{
+		return noteService.findByTitle(title);
 	}
 
 	@DeleteMapping

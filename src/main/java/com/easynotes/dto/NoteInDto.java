@@ -2,37 +2,41 @@ package com.easynotes.dto;
 
 public class NoteInDto
 {
-	private String noteTitle;
-	private String noteDesc;
-	private String noteText;
+	// @NotNull
+	// @Size(max = 20)
+	private String title;
+	// @Size(max = 20)
+	private String description;
+	private String text;
 
-	public String getNoteTitle()
+	public String getTitle()
 	{
-		return noteTitle;
+		return title;
 	}
 
-	public void setNoteTitle(String noteTitle)
+	public void setTitle(String title)
 	{
-		this.noteTitle = noteTitle;
+		this.title = title;
 	}
 
-	public String getNoteDesc()
+	public String getDescription()
 	{
-		return noteDesc;
+		return description;
 	}
 
-	public void setNoteDesc(String noteDesc)
+	public void setDescription(String description)
 	{
-		this.noteDesc = noteDesc;
+		this.description = description;
 	}
 
-	public String getNoteText()
+	public String getText()
 	{
-		return noteText;
+		return text;
 	}
 
-	public void setNoteText(String noteText)
+	public void setText(String text)
 	{
-		this.noteText = noteText;
+		this.text = text;
 	}
+
 }

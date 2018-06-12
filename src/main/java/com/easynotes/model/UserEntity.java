@@ -2,22 +2,22 @@ package com.easynotes.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "User")
-public class EntityUser
+public class UserEntity
 {
 	@Id
-	@Column(name = "user_id")
-	private Long userId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
+	private Long id;
 
-	@Column(name = "firstname")
-	private String firstName;
-
-	@Column(name = "lastname")
-	private String lastName;
+	@Column(name = "username", nullable = false)
+	private String userName;
 
 	@Column(name = "email", nullable = false)
 	private String email;
@@ -25,39 +25,29 @@ public class EntityUser
 	@Column(name = "password", nullable = false)
 	private String password;
 
-	public EntityUser()
+	public UserEntity()
 	{
 		super();
 	}
 
 	public Long getUserId()
 	{
-		return userId;
+		return id;
 	}
 
 	public void setUserId(Long userId)
 	{
-		this.userId = userId;
+		this.id = userId;
 	}
 
-	public String getFirstName()
+	public String getUserName()
 	{
-		return firstName;
+		return userName;
 	}
 
-	public void setFirstName(String firstName)
+	public void setUserName(String userName)
 	{
-		this.firstName = firstName;
-	}
-
-	public String getLastName()
-	{
-		return lastName;
-	}
-
-	public void setLastName(String lastName)
-	{
-		this.lastName = lastName;
+		this.userName = userName;
 	}
 
 	public String getEmail()
