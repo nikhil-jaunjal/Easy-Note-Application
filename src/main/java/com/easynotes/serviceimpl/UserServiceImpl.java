@@ -48,8 +48,8 @@ public class UserServiceImpl implements UserService
 			throw new BadRequestException(new ErrorMessage(ErrorCode.BAD_REQUEST));
 		}
 		userEntity = mapper.map(userInDto, UserEntity.class);
-		userEntity = userRepo.save(userEntity);
-		userEntity.setUserId(id);
+		userRepo.save(userEntity);
+		userEntity = userRepo.findOne(id);
 		return mapper.map(userEntity, UserOutDto.class);
 	}
 

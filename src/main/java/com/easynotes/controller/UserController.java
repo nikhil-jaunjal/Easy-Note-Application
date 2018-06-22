@@ -17,9 +17,9 @@ import com.easynotes.dto.UserInDto;
 import com.easynotes.dto.UserOutDto;
 import com.easynotes.model.UserEntity;
 import com.easynotes.service.UserService;
+@CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
 @RestController
 @RequestMapping("/users")
-@CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
 public class UserController
 {
 	@Autowired
@@ -42,7 +42,7 @@ public class UserController
 		userService.deleteUser(id);
 	}
 
-	@PutMapping
+	@PutMapping   //not working correctly
 	public UserOutDto update(@RequestBody UserInDto userInDto, @RequestParam("id") Long id)
 	{
 		return userService.updateUser(userInDto, id);

@@ -1,0 +1,21 @@
+
+Notes:
+
+@PostMapping /notes
+
+@GetMapping /notes
+
+@GetMapping /notes/title   localhost:8080/notes/title?title=title3
+
+@DeleteMapping /notes?id=1  localhost:8080/notes?id=1
+
+
+Users:
+
+@PostMapping /users
+
+@GetMapping /users   localhost:8080/users
+
+@DeleteMapping /users?id=1
+
+@PutMapping /users?id=1
